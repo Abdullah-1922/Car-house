@@ -44,7 +44,7 @@ const Add    = () => {
 
 }
     return (
-        <div className="container mt-10 px-5 py-10 rounded-2xl bg-gradient-to-r from-fuchsia-500 to-pink-500 mx-auto">
+        <div className="container mt-10 px-5 py-10 rounded-2xl bg-gradient-to-br from-fuchsia-300 via-violet-300 to-purple-200 mx-auto">
             <h2 className="text-2xl uppercase md:text-3xl lg:text-4xl  my-5 text-center  font-bold "> ADD NEW PRODUCTS    </h2>
             <form className="w-[90%]  mx-auto md:w-full " onSubmit={handleAddProduct}>
                 <div className="grid md:grid-cols-2 font-bold gap-8">

@@ -15,6 +15,8 @@ import AddProduct from './Pages/AddProduct/AddProduct';
 import AllProducts from './Pages/AllProducts/AllProducts';
 import Update from './Pages/Update/Update';
 import BrandCar from './Pages/BrandCar/BrandCar';
+import MyCart from './Pages/MyCarts/MyCart';
+import CartDetails from './Pages/CartDetails/CartDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,6 +55,17 @@ const router = createBrowserRouter([
         path:'product/:id',
         element:<BrandCar></BrandCar>,
         loader:({params})=>  fetch(`http://localhost:5000/products/${params.id}`)
+      },
+      {
+        path:'/details/:id',
+        element:<CartDetails></CartDetails>,
+        loader:({params})=>fetch(`http://localhost:5000/allProducts/${params.id}`)
+
+      },
+      {
+        path:'/carts',
+        element:<MyCart></MyCart>,
+        loader:()=>fetch('http://localhost:5000/allCarts')
       }
     ]
   },

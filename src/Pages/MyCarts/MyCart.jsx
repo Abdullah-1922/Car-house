@@ -2,6 +2,9 @@ import {  useLoaderData } from "react-router-dom";
 
 const MyCart = () => {
     const data =useLoaderData()
+    const handleDelete=()=>{
+        
+    }
     console.log(data);
     return (
         <div className="container rounded-2xl  mt-10 mx-auto">
@@ -15,6 +18,7 @@ const MyCart = () => {
             {product.name}
             <div className="badge badge-secondary">{product.rating}</div>
           </h2>
+
           <p>{product.description}</p>
           <p>Price: {product.price}</p>
           <div className="card-actions justify-end">
@@ -23,7 +27,7 @@ const MyCart = () => {
           </div>
          
            
-          <button className="btn mx-auto ">Remove from CART</button>
+          <button onClick={handleDelete}  className="btn mx-auto ">Remove from CART</button>
           
          
         </div>

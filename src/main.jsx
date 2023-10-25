@@ -17,6 +17,7 @@ import Update from './Pages/Update/Update';
 import BrandCar from './Pages/BrandCar/BrandCar';
 import MyCart from './Pages/MyCarts/MyCart';
 import CartDetails from './Pages/CartDetails/CartDetails';
+import PrivetRouter from './PriverRouter/PrivetRouter';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element:<Home></Home>,
-        loader:()=>fetch('http://localhost:5000/brands')
+        loader:()=>fetch('https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/brands')
         
       },
       {
@@ -39,33 +40,33 @@ const router = createBrowserRouter([
       },
       {
         path:'/addProduct',
-        element:<AddProduct></AddProduct>
+        element:<PrivetRouter><AddProduct></AddProduct></PrivetRouter> 
       },
       {
         path:'/allProducts',
         element:<AllProducts></AllProducts>,
-        loader:()=>fetch('http://localhost:5000/allProducts')
+        loader:()=>fetch('https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/allProducts')
       },
       {
         path:'/update/:id',
-        element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:5000/allProducts/${params.id}`)
+        element:<PrivetRouter><Update></Update></PrivetRouter> ,
+        loader:({params})=>fetch(`https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/allProducts/${params.id}`)
       },
       {
         path:'product/:id',
         element:<BrandCar></BrandCar>,
-        loader:({params})=>  fetch(`http://localhost:5000/products/${params.id}`)
+        loader:({params})=>  fetch(`https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/products/${params.id}`)
       },
       {
         path:'/details/:id',
         element:<CartDetails></CartDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/allProducts/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/allProducts/${params.id}`)
 
       },
       {
         path:'/carts',
         element:<MyCart></MyCart>,
-        loader:()=>fetch('http://localhost:5000/allCarts')
+        loader:()=>fetch('https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/allCarts')
       }
     ]
   },

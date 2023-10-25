@@ -35,7 +35,7 @@ const Update = () => {
     };
     console.log(productData);
 
-          fetch(`http://localhost:5000/allProducts/${data._id}`,{
+          fetch(`https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/allProducts/${data._id}`,{
               method: 'PUT',
               headers: {
 

@@ -1,16 +1,27 @@
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const CartDetails = () => {
   const cartDetails = useLoaderData();
   console.log(cartDetails);
   const handleCart=(cartDetails)=>{
-    fetch( 'http://localhost:5000/carts',{
+    fetch( 'https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/carts',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(cartDetails)
-    } )
+    } ).then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+      if(data.acknowledged=== true){
+        Swal.fire(
+          'Good job!',
+          'Successfully Add To Cart!',
+          'success'
+        )
+      }
+    })
 
   }
   return (

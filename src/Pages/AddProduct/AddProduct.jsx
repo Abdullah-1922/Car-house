@@ -24,7 +24,7 @@ const Add    = () => {
         description:   Description,
         rating:   Rating}
         console.log(productData);
-        fetch('http://localhost:5000/products',{
+        fetch('https://assignment-10-server-3zpemp4ty-abdullah-1922.vercel.app/products',{
             method: 'POST',
             headers: {
                

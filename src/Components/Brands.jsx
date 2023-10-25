@@ -48,7 +48,7 @@ const Brands = ({brandData}) => {
             brandData.map(brand=>   <SwiperSlide  key={brand._id}><div>
             <img className='h-[350px] md:h-[500px] lg:h-[600px] w-screen' src={brand.brand_img} alt="" />
             <h1 className='text-center text-3xl py-1 font-bold'>{brand.brand_name}</h1>
-            <Link to={`/product/${brand.brand_name}`}><button onClick={handleBrand} className='bg-gradient-to-r from-fuchsia-700 to-pink-600 rounded-xl hover:text-blue-800 px-2 p-1'>Show {brand.brand_name} Car</button></Link> 
+            <Link to={`/product/${brand.brand_name}`}><button onClick={handleBrand} className=' bg-gradient-to-br from-fuchsia-300 via-violet-300 to-purple-200  rounded-xl hover:text-blue-800 px-2 p-1'>Show {brand.brand_name} Car</button></Link> 
             </div></SwiperSlide>  )
         }
       

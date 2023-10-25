@@ -21,11 +21,11 @@ const ContactUsSection = () => {
                     <div className="flex flex-col md:flex-row gap-5">
                         <div className="form-group">
                         <label htmlFor="name">Name : </label>
-                        <input type="text" id="name" name="name" required />
+                        <input placeholder="Name" type="text" id="name" name="name" required />
                     </div>
                     <div className="form-group ">
                         <label htmlFor="email">Email : </label>
-                        <input type="email" id="email" name="email" required />
+                        <input placeholder="Email" type="email" id="email" name="email" required />
                     </div>
                     </div>
                     

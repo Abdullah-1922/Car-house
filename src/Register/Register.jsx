@@ -81,7 +81,7 @@ console.log(createUser);
           });
       };
     return (
-        <div>
+        <div className="mt-10">
          
 
             <div className=' flex justify-center w-fit mx-auto p-10 rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-300 ...'>

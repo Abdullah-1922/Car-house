@@ -44,8 +44,8 @@ const Add    = () => {
 
 }
     return (
-        <div className="container mx-auto">
-            <h2 className="text-2xl uppercase md:text-3xl lg:text-4xl  my-5 text-center bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent font-bold "> ADD NEW PRODUCTS    </h2>
+        <div className="container mt-10 px-5 py-10 rounded-2xl bg-gradient-to-r from-fuchsia-500 to-pink-500 mx-auto">
+            <h2 className="text-2xl uppercase md:text-3xl lg:text-4xl  my-5 text-center  font-bold "> ADD NEW PRODUCTS    </h2>
             <form className="w-[90%]  mx-auto md:w-full " onSubmit={handleAddProduct}>
                 <div className="grid md:grid-cols-2 font-bold gap-8">
                     <div className=" ">

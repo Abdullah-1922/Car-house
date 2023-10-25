@@ -77,10 +77,10 @@ const Login = () => {
 
 
   return (
-    <div>
+    <div className="mt-10">
     
 
-      <div className=' flex justify-center w-fit mx-auto p-10 rounded-3xl bg-gradient-to-br from-fuchsia-300 via-violet-300 to-purple-200'>
+      <div className='  flex justify-center w-fit mx-auto p-10 rounded-3xl bg-gradient-to-br from-fuchsia-300 via-violet-300 to-purple-200'>
         <div className='relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none'>
           <h4 className='block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased'>
             Login

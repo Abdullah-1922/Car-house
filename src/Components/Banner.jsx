@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -19,7 +20,7 @@ const Banner = () => {
           <p className='mb-5 bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent font-bold'>
           Bangladesh biggest car showroom.
           </p>
-          <button className='btn text-black border-transparent bg-gradient-to-r from-fuchsia-500 to-pink-500  '>VISIT CARs</button>
+          <Link to={'/allProducts'}><button className='btn text-black border-transparent bg-gradient-to-r from-fuchsia-500 to-pink-500  '>VISIT CARs</button></Link> 
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import { BiShow } from 'react-icons/bi';
 import { FcGoogle } from "react-icons/fc";
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
-  const { signIn } = useContext(AuthContext);
+  const { signIn ,googleLog} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const handleSubmit = (e) => {
@@ -69,10 +69,13 @@ const Login = () => {
         });
       });
   };
+  const handleGoogleLogin =()=>{
+    googleLog()
+  }
 
   return (
-    <div className='mt-10'>
-      <div className='  flex justify-center w-fit mx-auto p-10 rounded-3xl bg-gradient-to-br from-fuchsia-300 via-violet-300 to-purple-200'>
+    <div className='mt-10 '>
+      <div className=' py-10 px-3 md:p-10   flex justify-center w-fit mx-auto p-10 rounded-3xl bg-gradient-to-br from-fuchsia-300 via-violet-300 to-purple-200'>
         <div className='relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none'>
           <h4 className='block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased'>
             Login
@@ -159,6 +162,7 @@ const Login = () => {
               Login
             </button>
             <button
+            onClick={handleGoogleLogin}
               className='flex mx-auto mt-5 select-none items-center gap-3 rounded-lg border border-blue-gray-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
               type='button'
               data-ripple-dark='true'>

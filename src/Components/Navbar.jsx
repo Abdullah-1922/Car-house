@@ -1,6 +1,13 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {user,logOut}=useContext(AuthContext)
+  console.log(user);
+  const handleSignOut=()=>{
+    logOut()
+  }
  
     const NavLinks= <>
      <li > <NavLink to={'/'}><button>Home</button> </NavLink></li>
@@ -8,7 +15,7 @@ const Navbar = () => {
     <li><NavLink to={'/addProduct'}><button>Add Product</button> </NavLink></li> 
     <li><NavLink to={'/allProducts'}><button>All Products</button> </NavLink></li> 
     <li><NavLink to={'/carts'}><button>My Cart</button> </NavLink></li> 
-    <li><NavLink to={'/login'}><button>Login</button> </NavLink></li> 
+     <li><NavLink to={'/login'}><button>Login</button> </NavLink></li> 
     
     
     </>
@@ -27,7 +34,7 @@ const Navbar = () => {
        }
       </ul>
     </div>
-    <a className="btn btn-ghost  normal-case text-xl">daisyUI</a>
+   <img className="w-[60px] lg:ml-10 "  src="https://i.ibb.co/mhdSzWB/logo.png" alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal  px-1">
@@ -37,7 +44,11 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+   {
+    user? <div className="flex items-center gap-3"> <p>{user.displayName}</p>
+     <button onClick={handleSignOut} className="bg-orange-900 px-2 text-sm rounded-2xl p-2">SIGN OUT</button>
+    </div>:<NavLink to={'/login'}><button className="bg-blue-500 border-transparent rounded-2xl p-3 py-2">Login</button> </NavLink>
+   }
   </div>
 </div>
         </div>

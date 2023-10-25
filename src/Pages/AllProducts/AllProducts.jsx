@@ -24,7 +24,7 @@ const AllProducts = () => {
                 <div className="badge badge-outline">{product.carBrand}</div> 
                 <div className="badge badge-outline">{product.type}</div>
               </div>
-              <div className="mx-auto ">
+              <div className="mx-auto flex">
                 <Link className=" mx-auto mr-5" to={`/update/${product._id}`}> <button className="btn">Update Card</button></Link> 
                 <Link className=" mx-auto mr-5" to={`/details/${product._id}`}> <button className="btn">Show Details</button></Link> 
              

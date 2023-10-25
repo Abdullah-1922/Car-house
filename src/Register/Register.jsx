@@ -6,6 +6,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { BiShow } from "react-icons/bi";
 import 'react-toastify/dist/ReactToastify.css';
+import { FcGoogle } from "react-icons/fc";
+
 const Register = () => {
 
     
@@ -174,6 +176,13 @@ console.log(createUser);
             data-ripple-light='true'>
             Register
           </button>
+          <button
+              className='flex mx-auto mt-5 select-none items-center gap-3 rounded-lg border border-blue-gray-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+              type='button'
+              data-ripple-dark='true'>
+             <FcGoogle className='w-6 h-6'></FcGoogle>
+              Continue with Google
+            </button>
           <p className='mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased'>
             Already have an account?
             <Link to={'/login'}  className='font-medium text-pink-500 transition-colors hover:text-blue-700'>login</Link>

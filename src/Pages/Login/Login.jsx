@@ -1,85 +1,77 @@
-import { SnackbarProvider, enqueueSnackbar } from "notistack";
-import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import { AuthContext } from "../../Provider/AuthProvider";
-import { BiShow } from "react-icons/bi";
+import { SnackbarProvider, enqueueSnackbar } from 'notistack';
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { BiShow } from 'react-icons/bi';
+import { FcGoogle } from "react-icons/fc";
 const Login = () => {
+  const [showPass, setShowPass] = useState(false);
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
 
-    const [showPass,setShowPass]=useState(false)
-    const{ signIn}=useContext(AuthContext)
-    const navigate =useNavigate()
-    const location =useLocation()
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-      
-        const password = e.target.password.value;
-        const terms =e.target.terms.checked
-    
-        if(!/^(?=.*[A-Z])(?=.*[*&%$#]).{6,}$/.test(password)){
-            enqueueSnackbar('Invalid password. Requirements: 1 Capital, 1 Special (*&%$#), 2 Numbers, Min 8 characters!', { variant: 'error' }) 
-        }
-        console.log(terms);
-        if(!terms){
-            console.log('accept terms');
-            toast.warn('Accept terms and condition', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
-            return
-        }
-          signIn( email, password)
-        .then(res=>{console.log(res)
+    const password = e.target.password.value;
+    const terms = e.target.terms.checked;
 
+    if (!/^(?=.*[A-Z])(?=.*[*&%$#]).{6,}$/.test(password)) {
+      enqueueSnackbar(
+        'Invalid password. Requirements: 1 Capital, 1 Special (*&%$#), 2 Numbers, Min 8 characters!',
+        { variant: 'error' },
+      );
+    }
+    console.log(terms);
+    if (!terms) {
+      console.log('accept terms');
+      toast.warn('Accept terms and condition', {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+      return;
+    }
+    signIn(email, password)
+      .then((res) => {
+        console.log(res);
 
-            toast.success(' Login Successfully', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
-              navigate(location?.state ? location.state : '/')
-              
-              
-              
-              })
-        .catch(err=>{console.log(err)
-        
-            toast.error(` ${err.message}`, {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
-        
-        
-        
-        })
-       
-    
-      };
+        toast.success(' Login Successfully', {
+          position: 'top-right',
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+        navigate(location?.state ? location.state : '/');
+      })
+      .catch((err) => {
+        console.log(err);
 
-
+        toast.error(` ${err.message}`, {
+          position: 'top-right',
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+      });
+  };
 
   return (
-    <div className="mt-10">
-    
-
+    <div className='mt-10'>
       <div className='  flex justify-center w-fit mx-auto p-10 rounded-3xl bg-gradient-to-br from-fuchsia-300 via-violet-300 to-purple-200'>
         <div className='relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none'>
           <h4 className='block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased'>
@@ -165,6 +157,13 @@ const Login = () => {
               type='submit'
               data-ripple-light='true'>
               Login
+            </button>
+            <button
+              className='flex mx-auto mt-5 select-none items-center gap-3 rounded-lg border border-blue-gray-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+              type='button'
+              data-ripple-dark='true'>
+             <FcGoogle className='w-6 h-6'></FcGoogle>
+              Continue with Google
             </button>
             <p className='mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased'>
               Do not have an account?

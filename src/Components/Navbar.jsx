@@ -4,10 +4,11 @@ const Navbar = () => {
  
     const NavLinks= <>
      <li > <NavLink to={'/'}><button>Home</button> </NavLink></li>
-    <li><NavLink to={'/login'}><button>Login</button> </NavLink></li> 
+   
     <li><NavLink to={'/addProduct'}><button>Add Product</button> </NavLink></li> 
     <li><NavLink to={'/allProducts'}><button>All Products</button> </NavLink></li> 
     <li><NavLink to={'/carts'}><button>My Cart</button> </NavLink></li> 
+    <li><NavLink to={'/login'}><button>Login</button> </NavLink></li> 
     
     
     </>

@@ -15,7 +15,7 @@ const CartDetails = () => {
   }
   return (
     <div className='container mt-10 mx-auto'>
-      <div className='card md:py-10 px-5 flex flex-col md:flex-row card-side bg-gradient-to-r from-fuchsia-500 to-pink-500 shadow-xl'>
+      <div className='card pt-5 md:py-10 px-5 flex flex-col md:flex-row card-side bg-gradient-to-r from-fuchsia-500 to-pink-500 shadow-xl'>
         <figure  className='bg-cover bg-center bg-no-repeat md:w-1/2 mx-auto h-[300px] md:h-[500px] lg:h-[h-550px]'>
           <img
          className=''
